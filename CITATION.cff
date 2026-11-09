@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use GS-PI in your research, please cite the paper below."
+type: software
+title: "GS-PI: Stage II Point-Cloud Material Diffusion"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/Valentina-tinder/GS-PI_"
+url: "https://arxiv.org/abs/2609.19907"
+authors:
+  - family-names: Xu
+    given-names: Jieting
+  - family-names: Xie
+    given-names: Rengan
+  - family-names: Huang
+    given-names: Zijian
+  - family-names: Jin
+    given-names: Zehui
+  - family-names: Wang
+    given-names: Rui
+  - family-names: Huo
+    given-names: Yuchi
+preferred-citation:
+  type: article
+  title: "GS-PI: An Optimization-Decoupled Appearance Decomposition Approach for Generating PBR Gaussian Assets"
+  authors:
+    - family-names: Xu
+      given-names: Jieting
+    - family-names: Xie
+      given-names: Rengan
+    - family-names: Huang
+      given-names: Zijian
+    - family-names: Jin
+      given-names: Zehui
+    - family-names: Wang
+      given-names: Rui
+    - family-names: Huo
+      given-names: Yuchi
+  year: 2026
+  doi: "10.48550/arXiv.2609.19907"
+  journal: arXiv
+  url: "https://arxiv.org/abs/2609.19907"
+  identifiers:
+    - type: other
+      value: "arXiv:2609.19907"

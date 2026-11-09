@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gs-pi-point-transformer"
+version = "0.1.0"
+description = "GS-PI Stage II: conditional point-cloud diffusion for PBR material decomposition"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+  "torch>=2.4", "torchvision>=0.19", "numpy>=1.24,<2", "scipy>=1.10",
+  "Pillow>=9", "PyYAML>=6", "tqdm>=4.64", "plyfile>=1", "pytoml>=0.1.21"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+data = ["opencv-python-headless>=4.8,<4.12", "pandas>=1.5"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2609.19907"
+Repository = "https://github.com/Valentina-tinder/GS-PI_"
+Issues = "https://github.com/Valentina-tinder/GS-PI_/issues"
+
+[tool.setuptools.packages.find]
+include = ["gs_pi*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

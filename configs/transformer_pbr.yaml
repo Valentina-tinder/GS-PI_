@@ -1,0 +1,73 @@
+# Portable example; adjust paths and hyperparameters for your data.
+train_dataset: PBRConditionalDataset
+test_dataset: PBRConditionalDataset
+model:
+  coords_dim: 3
+  feats_dim: 5
+  num_points: 512
+  width: 512
+  layers: 24
+  heads: 8
+  fix_coords: true
+  fix_coords_training_mode: scaled
+  feature_schema: pbr_v1
+  condition_on_images: true
+  cond_point_dim: 5
+  cond_point_top_k: 1
+  num_global_views: 32
+  view_id_embed_dim: 0
+  topk_view_id_conditioning: onehot
+  topk_include_confidence: false
+  backbone_type: transformer
+  beta_schedule: cosine
+  min_snr_gamma: 5.0
+training:
+  batch_size: 4
+  max_iterations: 12000
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  ema_decay: 0.9991
+  gradient_accumulation_steps: 1
+  grad_clip: 1.0
+  save_interval: 1000
+  log_interval: 10
+train_dataset_params:
+  root_dir: data/train
+  num_views: 32
+  num_points: 512
+  feature_schema: pbr_v1
+  dino_features_dir: data/dino/train
+  dino_target_side: 5
+  dino_subsample_views: null
+  skip_missing_dino_features: false
+  dino_features_in_memory: false
+  cond_point_features_dir: data/topk1/train
+  require_precomputed_cond_point_features: true
+  skip_missing_precomputed_cond_point_features: false
+  cond_point_mode: topk
+  cond_point_top_k: 1
+  cond_point_dim: 5
+  prefer_extract_output: true
+  require_metadata: true
+  require_all_render_views: true
+  require_all_view_plys: false
+test_dataset_params:
+  root_dir: data/test
+  num_views: 32
+  num_points: 512
+  feature_schema: pbr_v1
+  dino_features_dir: data/dino/test
+  dino_target_side: 5
+  dino_subsample_views: null
+  skip_missing_dino_features: false
+  dino_features_in_memory: false
+  cond_point_features_dir: data/topk1/test
+  require_precomputed_cond_point_features: true
+  skip_missing_precomputed_cond_point_features: false
+  cond_point_mode: topk
+  cond_point_top_k: 1
+  cond_point_dim: 5
+  prefer_extract_output: true
+  require_metadata: true
+  require_all_render_views: true
+  require_all_view_plys: false

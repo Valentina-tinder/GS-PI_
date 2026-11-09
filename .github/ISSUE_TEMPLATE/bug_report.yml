@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible problem with the released training or evaluation code.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, PyTorch, torchvision, CUDA and GPU (or CPU).
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Command and configuration
+      description: Include the command, relevant YAML settings and input tensor shapes.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Include the full traceback and, if possible, a small reproducer.
+    validations:
+      required: true
